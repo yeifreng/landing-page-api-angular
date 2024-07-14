@@ -1,4 +1,4 @@
-import { IProductos } from 'src/app/models/product.model';
+import { IProduct } from 'src/app/models/product.model';
 import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -19,12 +19,15 @@ export class ProductsComponent implements OnInit {
 
   //Al iniciar el componente, traera desde el servicio, la lista de productos y se le asignara al array productList
   ngOnInit(): void {
-    this._apiService.getProducts().subscribe((data:IProductos[]) => {
+    this._apiService.getProducts().subscribe((data:IProduct[]) => {
       console.log(data);
       this.productList = data;
     })
   }
 
+  navigate(id: number): void {
+    console.log(id)
+  }
 
 
 }

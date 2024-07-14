@@ -5,53 +5,18 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Productos</th>
-        <th scope="col">Precio</th>
         <th scope="col">Descripcion</th>
+        <th scope="col">Precio</th>
         <th scope="col">Detalle</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td><button type="button" class="btn btn-outline-primary">Detalle</button></td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td><button type="button" class="btn btn-outline-primary">Detalle</button></td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td><button type="button" class="btn btn-outline-primary">Detalle</button></td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td><button type="button" class="btn btn-outline-primary">Detalle</button></td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td><button type="button" class="btn btn-outline-primary">Detalle</button></td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td><button type="button" class="btn btn-outline-primary">Detalle</button></td>
+      <tr *ngFor="let product of productList, let i = index">
+        <th scope="row">{{product.id}}</th>
+        <td>{{product.title}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price}}</td>
+        <td><button type="button" class="btn btn-outline-primary" (click)="navigate(product.id)">Detalle</button></td>
       </tr>
     </tbody>
   </table>
