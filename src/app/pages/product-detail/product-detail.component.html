@@ -1,1 +1,16 @@
-<p>product-detail works!</p>
+<ng-container *ngIf="!loading">
+
+  <h1>Animate a comprarlo</h1>
+  <h2>{{product?.title}}</h2>
+
+</ng-container>
+
+
+<ng-container *ngIf="loading">
+
+  <h5>Cargando información</h5>
+
+</ng-container>
+
+
+

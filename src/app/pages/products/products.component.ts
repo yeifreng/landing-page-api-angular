@@ -1,6 +1,7 @@
 import { IProduct } from 'src/app/models/product.model';
 import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -13,20 +14,20 @@ export class ProductsComponent implements OnInit {
   productList: any[] = [];
 
   //Inyectamos el servicio en el componente
-  constructor(private _apiService: ApiService){
+  constructor(private _apiService: ApiService, private _router:Router){
 
   }
 
   //Al iniciar el componente, traera desde el servicio, la lista de productos y se le asignara al array productList
   ngOnInit(): void {
     this._apiService.getProducts().subscribe((data:IProduct[]) => {
-      console.log(data);
       this.productList = data;
     })
   }
 
+  //Creamos un metodo para navegar al componente products-detail tomando el id que traemos del HTML
   navigate(id: number): void {
-    console.log(id)
+    this._router.navigate(['/products', id])
   }
 
 
