@@ -1,16 +1,26 @@
-<ng-container *ngIf="!loading">
+<div class="container mt-3">
+  <ng-container *ngIf="!loading">
 
-  <h1>Animate a comprarlo</h1>
-  <h2>{{product?.title}}</h2>
+    <div class="card mt-3">
+      <img src="{{product?.image}}" class="card-img-top" alt="{{product?.title}}">
+      <div class="card-body">
+        <h5 class="card-title">{{product?.title}}</h5>
+        <p>{{product?.price | currency}}</p>
+        <p class="card-text">{{product?.description}}</p>
+      </div>
+    </div>
 
-</ng-container>
-
-
-<ng-container *ngIf="loading">
-
-  <h5>Cargando información</h5>
-
-</ng-container>
-
+  </ng-container>
 
 
+  <ng-container *ngIf="loading">
+
+    <h5>Cargando información...</h5>
+
+  </ng-container>
+
+
+
+
+
+</div>

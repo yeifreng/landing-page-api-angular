@@ -1,0 +1,17 @@
+
+.card-img-top{
+  width: 100%;
+  height: 15vw;
+  object-fit: scale-down;
+}
+
+.card{
+  max-width: 40rem;
+}
+
+
+
+.container{
+  display: flex;
+  justify-content: center;
+}
