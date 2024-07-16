@@ -1,0 +1,18 @@
+<div class="container mt-3">
+
+  <form [formGroup]="formularioContacto" (ngSubmit)="enviar($event)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
+      <input type="email" [ngClass]="{'is-invalid': hasErrors('email', 'required')}" class="form-control" id="exampleInputEmail1" formControlName="email">
+      <div class="text-danger" *ngIf="hasErrors('email', 'required')">Email requerido</div>
+      <div class="text-danger" *ngIf="hasErrors('email', 'email')">Formato Email invalido</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Telefono</label>
+      <input type="text" [ngClass]="{'is-invalid': hasErrors('phone', 'required')}" class="form-control" id="exampleInputPassword1" formControlName="phone">
+      <div class="text-danger" *ngIf="hasErrors('phone', 'required')">Telefono requerido</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+
+</div>
